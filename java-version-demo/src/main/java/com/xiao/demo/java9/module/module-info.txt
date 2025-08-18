@@ -1,0 +1,11 @@
+module com.xiao.demo {
+    // module-inof.java 提供模块级别的访问限制，该模块被编译为 jar 包后被引入其他业务模块，其他业务模块只能访问该 jar 包开放的类
+    // module-info.java 文件需要放在根目录下，这里仅作为学习而放在这里，并且后缀为 txt，实际开发中应该为 java
+    // 更详细的技术细节参考博客: https://www.cnblogs.com/IcanFixIt/p/6947763.html
+
+    // 公开指定包的所有公共成员
+    exports com.xiao.demo.java9.module;
+
+    // 指定模块的依赖关系
+    requires java.base;
+}

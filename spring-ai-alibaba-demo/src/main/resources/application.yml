@@ -1,0 +1,53 @@
+server:
+  port: 8989
+
+spring:
+  application:
+    name: spring-ai-alibaba-dmeo
+
+  ai:
+    alibaba:
+      toolcalling:
+        baidu:
+          translate:
+            enabled: true
+            app-id: ${BAIDU_TRANSLATE_APP_ID}
+            secret-key: ${BAIDU_TRANSLATE_SECRET_KEY}
+          map:
+            enabled: true
+            apiKey: ${BAIDU_MAP_API_KEY}
+        time:
+          enabled: true
+        weather:
+          enabled: true
+          api-key: ${WEATHER_API_KEY}
+    dashscope:
+      api-key: sk-e0045609b09547e3b3cb55ce573c98fb
+      observations:
+        log-completion: true
+        log-prompt: true
+    # tools config items
+    tools:
+      observability:
+        # default value is false.
+        include-content: true
+    chat:
+      client:
+        observations:
+          # default value is false.
+          log-prompt: true
+          log-completion: true
+          include-error-logging: true
+    http:
+      client:
+        read-timeout: 60s
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client: debug

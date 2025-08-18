@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: springboot-elasticsearch-demo
+
+server:
+  port: 8899
+
+
+logging:
+  level:
+    tracer: TRACE
+
+es:
+  url: http://127.0.0.1:9200
+  username:
+  password:
